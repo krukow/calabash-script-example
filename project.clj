@@ -4,7 +4,8 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.4.0"]
-                 [calabash/uia-repl "0.0.7"]]
+                 [calabash/uia-repl "0.0.8"]
+                 [calabash-script/calabash-script "0.0.8"]]
 
 
   :plugins [[lein-cljsbuild "0.2.9"]]

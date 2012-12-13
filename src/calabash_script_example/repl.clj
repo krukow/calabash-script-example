@@ -3,11 +3,11 @@
             [calabash-script.clj.run :as run]))
 
 (defn start-repl
-  [path]
-  (uia/run-uia-repl :app path))
+  []
+  (uia/run-uia-repl :app (System/getenv "APP")))
 
 (defn run-tests
   []
   (run/run-test
-   :app "/Users/krukow/github/2012-Olympics-iOS--iPad-and-iPhone--source-code/2012 Olympics/build/Release-iphonesimulator/2012 Olympics.app"
+   :app (System/getenv "APP")
    :test "build/test_script.js"))
