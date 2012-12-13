@@ -2,20 +2,18 @@
   (:require [calabash-script.log :as log]
             [calabash-script.utils :as utils])
   (:use [calabash-script.core :only
-         [define-uia-test query tap sleep screenshot keyboard-enter-text enter run-all!]]))
+         [query tap tap-mark sleep screenshot
+          keyboard-enter-text enter]]
+
+        [calabash-script.tests :only  [define-uia-test run-all!]]))
 
 (define-uia-test
-  "user should be able to log in"
+  "Archery details should be accessible via Events"
   (fn []
-    (tap [:textField {:marked "Name"}])
-    (keyboard-enter-text "Karl.Krukow@gmail.com")
-    (enter)
-    (screenshot "Menu")
-    (tap [:button {:marked "Second"}])
-    (sleep 0.3)
-    (screenshot "Map")
+    (tap-mark "Events")
+    (utils/screenshot "Events")
+    (sleep 3)
+
     ))
-
-
 
 (run-all!)
